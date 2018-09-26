@@ -21,34 +21,22 @@ def won?(board)
     board[combo[0]] == board[combo[1]] &&
     board[combo[1]] == board[combo[2]] &&
     position_taken?(baord, combo[0])
-  end 
 end 
 
+end 
+
+
+
 def full?(board)
+  if board.any?{|i| i == " " || nil}
+    return false 
+  end 
   if board.all?{|space| space == "X" || "O"}
     return true 
-  end 
-  if board.any?{|space| space == " " || nil}
-    return false 
   end 
 end 
 
 def draw?(board)
-  full?(board) && !won?(board)
+  
 end 
-
-def over?(board)
-  won?(board) || draw?(board) || full?(board)
-end 
-
-def winner(board)
-  if winning_combo = won?(board)
-    board[winning_combo.first]
-  end 
-end
-
-
-
-
-
   
