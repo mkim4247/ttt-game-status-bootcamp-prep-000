@@ -26,7 +26,7 @@ end
 
 def full?(board)
   if board.all?{|space| space == "X" || "O"}
-    return true 
+    true 
   else 
     false 
   end 
