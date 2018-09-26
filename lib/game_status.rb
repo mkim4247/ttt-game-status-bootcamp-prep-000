@@ -26,10 +26,10 @@ end
 
 def full?(board)
   if board.all?{|space| space == "X" || "O"}
-    true 
+    return true 
   end 
   if board.any?{|space| space == " " || nil}
-    false 
+    return false 
   end 
 end 
 
