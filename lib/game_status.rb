@@ -23,10 +23,6 @@ def won?(board)
     position_taken?(baord, combo[0])
 end 
 
-end 
-
-
-
 def full?(board)
   if board.any?{|i| i == " " || nil}
     return false 
