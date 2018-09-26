@@ -25,15 +25,25 @@ def won?(board)
 end 
 
 def full?(board)
-  if board.any?{|i| i == " " || nil}
-    return false 
-  end 
-  if board.all?{|space| space == "X" || "O"}
-    return true 
-  end 
+  board.all?{|space| space == "X" || "O"}
 end 
 
 def draw?(board)
-  
+  full?(board) && !won?(board)
 end 
+
+def over?(board)
+  won?(board) || draw?(board) || full?(board)
+end 
+
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end 
+end
+
+
+
+
+
   
